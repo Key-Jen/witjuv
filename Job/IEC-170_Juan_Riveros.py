@@ -46,7 +46,7 @@ try:            #TRY???!?!?
 
     salir = False
     while not salir:
-        print(" *** Menú {Job.version.version.version}*** ")
+        print(f" *** Menú {version.version.version}*** ")
         print("[1] Agrega producto")
         print("[2] Listar producto")
         print("[3] Buscar por nombre")
