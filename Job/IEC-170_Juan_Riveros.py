@@ -1,42 +1,10 @@
 #Sistema de gestion de inventario para una tienda
 #Autor: Jota
 #Historial
-import Version.version
- 
-def fn_get_num_valido(mensaje):
-    """
-    funcion para validar el ingreso de un valor numérico.
-    No termina hasta que el valor ingresado es válido
-    """
-    validos = ["0","1","2","3","4","5","6","7","8","9","-","."]
-    malopos = False
-    repite = True
-    num = 0
-    while repite:
-        num = input( mensaje )
-        l = len( num ) #obtener el largo
-        malochar = False
-        malog = False
-        contg = 0
-        contp = 0
-        for i in range( l ):
-            if not num[i] in validos:
-                malochar = True
-            if num[i] == "-":
-                contg = contg+1
-            if num[i] == ".":
-                contp = contp+1
-        malopos = contg == 1 and  num[0] != "-"
-        malog = contg > 1
-        malop = contp > 1
-        if malochar or malog or malopos or malop:
-            repite = True
-            print("La entrada no es válida")
-        else:
-            repite = False
-    numero = float(num)
-    return(numero)
-    #fn_get_valida_num
+from version.version import version
+from auxiliares.listas import lnombre, lprecio, lstock 
+from auxiliares.validacion_num import fn_get_num_valido
+
 
 def fn_mostrar_producto(prod, precio, stock):
     """
@@ -68,19 +36,17 @@ def fn_buscar(lista, nombre):
 # Deberia entender las otras 2 pero no me pregunti wn preguntale a la mari y a la abril
 
 
-#PROGRAMA PRINCIPAL (PP)
-
+#####################################PROGRAMA PRINCIPAL (PP)#######################################
+###################################################################################################
 #listas para administrar los productos
 try:            #TRY???!?!?
-    print(f"*** Menú {Version.version.version}")
-    lnombre = ["Plumon", "Borrador","Pizarra"]
-    lprecio = [1200, 3500, 10500]
-    lstock = [20,8,3]
+   # print(f"*** Menú {version.version.version}")
+
 
 
     salir = False
     while not salir:
-        print(" *** Menú *** ")
+        print(" *** Menú {Job.version.version.version}*** ")
         print("[1] Agrega producto")
         print("[2] Listar producto")
         print("[3] Buscar por nombre")
