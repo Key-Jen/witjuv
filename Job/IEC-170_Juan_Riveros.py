@@ -2,7 +2,7 @@
 #Autor: Jota
 #Historial
 from version.version import version
-from auxiliares.listas import lnombre, lprecio, lstock 
+from auxiliares.listas import lnombre, lprecio, lstock, fn_actualizar_lista
 from auxiliares.validacion_num import fn_get_num_valido
 
 
@@ -46,7 +46,7 @@ try:            #TRY???!?!?
 
     salir = False
     while not salir:
-        print(f" *** Menú {version.version.version}*** ")
+        print(f" *** Menú {version} *** ")
         print("[1] Agrega producto")
         print("[2] Listar producto")
         print("[3] Buscar por nombre")
@@ -63,6 +63,7 @@ try:            #TRY???!?!?
             lprecio.append(precio)
             canti = fn_get_num_valido("Cantidad del Producto: ") #int(input("Cantidad del producto: "))
             lstock.append(int(canti))
+            fn_actualizar_lista(lnombre,lprecio,lstock)
             print(f"Se ha agregado {nom}, con el precio {precio} y el stock {canti}")
 
         #******* Listar
