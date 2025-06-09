@@ -1,3 +1,5 @@
+from auxiliares.validacion_num import *
+from auxiliares.FuncionesIEC2 import *
 
 def fn_mostrar_producto(prod, precio, stock):
     """
@@ -28,24 +30,23 @@ def fn_buscar(lista, nombre):
 # Vi la primera funcion y como se construyo desde 0...
 # Deberia entender las otras 2 pero no me pregunti wn preguntale a la mari y a la abril
 
-def fn_agregar_producto(nom, precio, canti):
+def fn_agregar_producto(lnombre, lprecio, lstock):
     nom = input("Nombre del producto: ")        #Entiendo la logica de las funciones pero just in case wtf is this
     lnombre.append(nom)
     precio = fn_get_num_valido("Precio del producto: ") #float(input("Precio del producto: "))
     lprecio.append(precio)
-    canti = fn_get_num_valido("Cantidad del Producto: ") #int(input("Cantidad del producto: "))
-    lstock.append(int(canti))
-    fn_actualizar_lista(lnombre,lprecio,lstock)
-    print(f"Se ha agregado {nom}, con el precio {precio} y el stock {canti}")
+    stock = fn_get_num_valido("Cantidad del Producto: ") #int(input("Cantidad del producto: "))
+    lstock.append(int(stock))
+    print(f"Se ha agregado {nom}, con el precio {precio} y el stock {stock}")
 
 
-def fn_listar(lnombre):
-        largo = len (lnombre)
+def fn_listar(lnombre,lprecio,lstock):
+    largo = len (lnombre)
     for i in range(largo):
         fn_mostrar_producto(lnombre[i],lprecio[i],lstock[i])
 
 
-def fn_buscar():
+def fn_buscar(lnombre,lprecio,lstock):
     nom = input("Nombre del producto a buscar: ")
     pos = fn_buscar (lnombre, nom)
     if pos == -1:
@@ -53,7 +54,7 @@ def fn_buscar():
     else:
         fn_mostrar_producto(lnombre[pos],lprecio[pos],lstock[pos])
 
-def fn_borrar():
+def fn_borrar(lnombre,lprecio,lstock):
     nom = input("Nombre del producto a Eliminar :evil_imp: : ")
     pos = fn_buscar(lnombre, nom)
     if pos != -1: #Indica que el producto si está
@@ -69,14 +70,14 @@ def fn_borrar():
     else:
         print(f"El producto {nom} no existe dumbass!!! :P")
 
-def fn_modificar():
+def fn_modificar(lnombre,lprecio,lstock):
     nom = input("Nombre del producto a modificar :blush: : ")
     pos = fn_buscar(lnombre, nom)
     if pos == -1: #Indica que el producto NO está
         print(f"El producto {nom} no existe dumbass!!! :P")
     else:
-    fn_mostrar_producto(lnombre[pos], lprecio[pos], lstock[pos])
-    resp = input("Estai seguro waton? [si/no]")
+     fn_mostrar_producto(lnombre[pos], lprecio[pos], lstock[pos])
+     resp = input("Estai seguro waton? [si/no]")
     if resp.upper() == "SI":
         cant = fn_get_num_valido("Ingrese nueva cantidad: ")
         lstock[pos] = int(cant)
