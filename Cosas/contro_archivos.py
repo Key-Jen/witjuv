@@ -21,7 +21,7 @@
     #contenido = archivo.read()
     #print("Contenido del archivo: \n",contenido )
 
-archivo = open("archivo.txt", "r", encoding = "utf-8")
+archivo = open("Cosas/archivo.txt", "r", encoding = "utf-8")
 lineas = archivo.readlines()
 numlin = len ( lineas)
 for i in range(0,numlin):
