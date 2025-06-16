@@ -12,6 +12,7 @@ def calcular_md5_archivo(archi):
 
 
 #pp
-#ruta = r"T:\Solicitudes instalacion Informatica 2025\Apache Hadoop\hadoop-3.4.1-src.tar.gz"
-ruta = r"C:\Users\informatica\Desktop\hadoop-3.4.1-src.tar.gz"
+ruta = r"T:\Solicitudes instalacion Informatica 2025\Apache Hadoop\hadoop-3.4.1-src.tar.gz" #Archivos de prueba, el del escritorio se borra, thanks inacap.
+ruta2 = r"C:\Users\informatica\Desktop\hadoop-3.4.1-src.tar.gz"
 print(calcular_md5_archivo(ruta))
+print(calcular_md5_archivo(ruta2))
