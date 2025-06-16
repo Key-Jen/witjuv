@@ -21,14 +21,14 @@ print(f"las credenciales son {usuario} y {clave}")
 
 
 
-#                                             Para integridad de los datos y contraseña
-#                                                               |
-# Funciones de Hash    ---------------------> siempre tienen el mismo largo (MD5, SHA 256)          HASH
-#                                             IRREVERSIBLE
+#                                              Para integridad de los datos y contraseña
+#                                                                |
+# Funciones de Hash    ---------------------> -siempre tienen el mismo largo (MD5, SHA 256)          HASH
+#                                             -IRREVERSIBLE
 #                                             
-# Funciones de Cifrado ---------------------> Largo variable                                 
-#                                             Reversible (si tiene la clave)                        Cypher Text
-#                                             AES, DES, Fernet                                      Texto Cifrado
-#                                                     |
-#                                             Seguridad (Privacidad en la WEB)
-#                                             Para mantener incognito un Mensaje/Archivo
+# Funciones de Cifrado ---------------------> -Largo variable                                 
+#                                             -Reversible (si tiene la clave)                        Cypher Text
+#                                              AES, DES, Fernet                                      Texto Cifrado
+#                                                             |
+#                                              Seguridad (Privacidad en la WEB)
+#                                              Para mantener incognito un Mensaje/Archivo
